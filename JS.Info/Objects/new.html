@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+    <p>Before the script...</p>
+
+    <script>
+        /*  let user = new function () {
+             this.name = "John";
+             this.isAdmin = false;
+         };
+         alert(user.name); */
+        function User(name) {
+            if (!new.target) { // if you run me without new
+                return new User(name); // ...I will add new for you
+            }
+
+            this.name = name;
+        }
+
+        let john = User("John"); // redirects call to new User
+        alert(john.name); // John
+
+    </script>
+
+    <p>...After the script.</p>
+
+</body>
+
+</html>

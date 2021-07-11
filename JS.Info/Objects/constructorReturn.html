@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+    <p>Before the script...</p>
+
+    <script>
+
+        function BigUser() {
+
+            this.name = "John";
+
+            return { name: "Godzilla" };  // <-- returns this object
+        }
+
+        alert(BigUser().name);  // Godzilla, got that object
+    </script>
+
+    <p>...After the script.</p>
+
+</body>
+
+</html>

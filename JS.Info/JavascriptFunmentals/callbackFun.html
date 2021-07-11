@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+    <p>Before the script...</p>
+
+    <script>
+        function ask(question, yes, no) {
+            if (confirm(question)) {
+                yes();
+            }
+            else {
+                no();
+            }
+        }
+        function showOk() {
+            alert("You agreed");
+        }
+        function showCancel() {
+            alert("You cancelled the execution");
+        }
+        ask("Do you agree?", showOk, showCancel);
+
+
+        //Short way---->>>
+        /* function ask(question, yes, no) {
+            if (confirm(question)) yes()
+            else no();
+        }
+
+        ask(
+            "Do you agree?",
+            function () { alert("You agreed."); },
+            function () { alert("You canceled the execution."); }
+        ); */
+
+    </script>
+    <p>...After the script.</p>
+
+</body>
+
+</html>

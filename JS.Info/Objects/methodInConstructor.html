@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+    <p>Before the script...</p>
+
+    <script>
+        function User(name){
+            this.name=name;
+            this.sayhi=function(){
+                alert("My name is " + this.name);
+            }
+        }
+        let jhon=new User("Ismile");
+        jhon.sayhi();
+    </script>
+
+    <p>...After the script.</p>
+
+</body>
+
+</html>

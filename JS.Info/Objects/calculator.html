@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+    <p>Before the script...</p>
+
+    <script>
+        let calcualtor = {
+            read() {
+                this.a = +prompt('a?', 0);
+                this.b = +prompt('b?', 0);
+            },
+            sum() {
+                return this.a + this.b;
+            },
+            mul() {
+                return this.a * this.b;
+            }
+
+        }
+
+        calcualtor.read();
+        alert(calcualtor.sum());
+        alert(calcualtor.mul());
+
+    </script>
+
+    <p>...After the script.</p>
+
+</body>
+
+</html>

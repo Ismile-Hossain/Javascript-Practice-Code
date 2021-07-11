@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+    <p>Before the script...</p>
+ 
+    <script>
+        //it’s not enough to copy clone.sizes = user.sizes, because the user.sizes is an object, it will be copied by reference
+        let user = {
+            name: "Ismile",
+            age: 25,
+            size:{
+                hight:5,
+                width:10
+            }
+        };
+        let clone = Object.assign({}, user);
+        alert(clone.name);
+        alert(clone.age);
+        alert(clone.size.hight);
+        alert(clone.size.width);
+    </script>
+
+    <p>...After the script.</p>
+
+</body>
+
+</html>

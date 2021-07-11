@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+    <p>Before the script...</p>
+
+    <script>
+        let user = {
+            name: "Ismile",
+            id: 27,
+            age: 25
+        };
+        admin = {};
+        for (let key in user) {
+            admin[key] = user[key];
+        }
+        alert(admin.name);
+        alert(admin.age);
+        alert(admin.id);
+    </script>
+
+    <p>...After the script.</p>
+
+</body>
+
+</html>
