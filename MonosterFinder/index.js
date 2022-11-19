@@ -1,40 +1,54 @@
 import { monsters } from './monsters.js';
 
-console.log(monsters);
+//console.log(monsters);
 
-for(let monster of monsters){
+for (let monster of monsters) {
     showMonster(monster);
 }
 
-function showMonster(monster){
-   const monsterEle = document.createElement('div');
-   monsterEle.className = 'monster';
+function showMonster(monster) {
+    const monsterEle = document.createElement('div');
+    monsterEle.className = 'monster';
 
-   const img = document.createElement('img');
-   img.src = `https://robohash.org/${monster.id}}?set=set2`;
-   img.alt = monster.name;
-   
-   const name = document.createElement('p');
-   name.className = "name";
-   name.innerText = monster.name;
+    const img = document.createElement('img');
+    img.src = `https://robohash.org/${monster.id}}?set=set2`;
+    img.alt = monster.name;
 
-   const email = document.createElement('p');
-   name.className = "email";
-   name.innerText = monster.email;
+    const name = document.createElement('p');
+    name.className = "name";
+    name.innerText = monster.name;
 
-   monsterEle.append(img,name,email);
+    const email = document.createElement('p');
+    name.className = "email";
+    name.innerText = monster.email;
 
-   document.querySelector('.monsters').append(monsterEle);
+    monsterEle.append(img, name, email);
+
+    document.querySelector('.monsters').append(monsterEle);
 }
 
+document.querySelector('#search-monster-form').addEventListener('keyup', function (e) {
 
-{/* <div class="monster">
-        <img src="https://robohash.org/6?set=set2" alt="MD. Sakib Khan" />
-        <p class="name">MD. Sakib Khan</p>
-        <p class="email">programmingwithsakib@gmail.com</p>
-</div>
+    const keyword = e.target.value.toLowerCase();
+    //console.log(keyword);
 
+    const monsters = document.querySelectorAll('.monster');
+    console.log(monsters);
+    for (let monster of monsters) {
+        const name = monster.children[1].innerText;
+        const email = monster.children[2].innerText;
+
+        if(name.includes(keyword) || email.includes(keyword)){
+            monster.style.display = 'block';
+        }else{
+            monster.style.display = 'none';
+        }
+    }
+});
+
+
+/*
 <div class="p-5 not-found" style="display: none">
-        <span>404</span>
-        <h1>🧟‍♂️ No Monster Found 🧟‍♂️</h1>
-</div> */}
+    <span>404</span>
+    <h1>🧟‍♂️ No Monster Found 🧟‍♂️</h1>
+</div> */
